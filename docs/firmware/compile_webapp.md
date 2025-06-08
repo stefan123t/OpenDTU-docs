@@ -18,6 +18,21 @@ flashing the ESP (if the Web API stays the same).
 
 You need to install [NodeJS LTS](https://nodejs.org/en/download/){target=_blank} to be able to work with the WebApp.
 
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+nvm install 22
+
+node -v # Should print "v22.16.0".
+nvm current # Should print "v22.16.0".
+npm -v # Should print "10.9.2".
+
+# install yarn in Debian/Ubuntu
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install --no-install-recommends yarn
+```
+
 ## Building the WebApp
 
 The WebApp will be build using `yarn`. First of all you have to install all the
